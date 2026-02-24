@@ -1,0 +1,32 @@
+{
+  "name": "eslint-plugin-tailwindcss-order",
+  "version": "0.0.0",
+  "description": "An eslint plugin to sort Tailwind CSS classes with a custom order",
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.3.0",
+    "eslint": "^10.0.2",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "eslint": "^10.0.0"
+  }
+}
