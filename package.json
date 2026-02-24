@@ -3,7 +3,28 @@
   "version": "0.0.0",
   "description": "An eslint plugin to sort Tailwind CSS classes with a custom order",
   "license": "MIT",
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dherault/eslint-plugin-tailwindcss-order.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dherault/eslint-plugin-tailwindcss-order/issues"
+  },
+  "homepage": "https://github.com/dherault/eslint-plugin-tailwindcss-order",
+  "keywords": [
+    "eslint",
+    "eslint plugin",
+    "tailwind",
+    "tailwindcss",
+    "css",
+    "style",
+    "lint",
+    "linting",
+    "sort",
+    "order",
+    "classes"
+  ],
+  "author": "David Hérault <dherault@gmail.com> (https://github.com/dherault)",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,7 +35,8 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/eslint": "^9.6.1",
