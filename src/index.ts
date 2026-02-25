@@ -9,7 +9,7 @@ const plugin = {
     version: '1.0.0',
   },
   rules: {
-    'sort-tailwind-css-classes': sortTailwindCssClasses,
+    'sort-tailwindcss-classes': sortTailwindCssClasses,
   },
   configs: {} as Record<ConfigurationName, Config>,
 }
@@ -17,10 +17,10 @@ const plugin = {
 Object.assign(plugin.configs, {
   recommended: {
     plugins: {
-      'tailwind-css-order': plugin,
+      'tailwindcss-order': plugin,
     },
     rules: {
-      'tailwind-css-order/sort-tailwind-css-classes': 'error',
+      'tailwindcss-order/sort-tailwindcss-classes': 'error',
     },
   },
 })

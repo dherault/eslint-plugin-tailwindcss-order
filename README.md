@@ -50,7 +50,7 @@ The plugin automatically detects and sorts Tailwind CSS classes in JSX `classNam
 <div className="p-4 flex bg-blue-600 hover:bg-blue-500 text-white" />
 ```
 
-## Rule: `sort-tailwind-css-classes`
+## Rule: `sort-tailwindcss-classes`
 
 Enforces a consistent, semantic ordering of Tailwind CSS classes.
 
@@ -60,7 +60,7 @@ The rule accepts an optional array of strings to define a custom class order:
 
 ```javascript
 {
-  'tailwind-css-order/sort-tailwind-css-classes': ['warn', [
+  'tailwindcss-order/sort-tailwindcss-classes': ['warn', [
     'flex',
     'grid',
     'block',
@@ -87,7 +87,7 @@ export default [
   tailwindCssOrder.configs.recommended,
   {
     rules: {
-      'tailwind-css-order/sort-tailwind-css-classes': ['error', tailwindCssClassOrder],
+      'tailwindcss-order/sort-tailwindcss-classes': ['error', tailwindCssClassOrder],
     }
   }
 ]
