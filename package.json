@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-tailwindcss-order",
-  "version": "1.1.0",
+  "version": "2.1.0",
   "description": "An eslint plugin to sort Tailwind CSS classes with a custom order",
   "license": "MIT",
   "repository": {
