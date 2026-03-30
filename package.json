@@ -36,16 +36,16 @@
     "dev": "tsc --watch",
     "test": "jest",
     "test:watch": "jest --watch",
-    "version": "npx auto-changelog -p && git add CHANGELOG.md",
+    "version": "auto-changelog -p && git add CHANGELOG.md",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/eslint": "^9.6.1",
     "@types/jest": "^30.0.0",
-    "@types/node": "^25.3.0",
+    "@types/node": "^25.5.0",
     "auto-changelog": "^2.5.0",
-    "eslint": "^10.0.2",
-    "jest": "^30.2.0",
+    "eslint": "^10.1.0",
+    "jest": "^30.3.0",
     "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
