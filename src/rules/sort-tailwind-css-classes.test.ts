@@ -101,6 +101,32 @@ function Component() {
   `
 }
 
+function createCnDirectInvokationDivCode(className: string) {
+  return `
+import { cn } from 'classnames'
+function Component() {
+  return (
+    <div
+      className={cn("${className}", "flex items-center")}
+    />
+  )
+}
+  `
+}
+
+function createCnDirectSecondInvokationDivCode(className: string) {
+  return `
+import { cn } from 'classnames'
+function Component() {
+  return (
+    <div
+      className={cn("flex items-center", "${className}")}
+    />
+  )
+}
+  `
+}
+
 function createStringInterpolationDivCode(className: string) {
   return `
 function Component() {
@@ -147,6 +173,8 @@ const createCodes = Object.entries({
   createDoubleCnDivCode,
   createCnNoBracketsDivCode,
   createDoubleCnNoBracketsDivCode,
+  // createCnDirectInvokationDivCode,
+  // createCnDirectSecondInvokationDivCode,
   createStringInterpolationDivCode,
   createMixedAfterStringInterpolationDivCode,
   createMixedBeforeStringInterpolationDivCode,
@@ -429,17 +457,17 @@ describe('sort-tailwind-classes', () => {
     ruleTester.run(`sort-tailwind-classes (custom order with negative margins, ${name})`, sortTailwindCssClasses, {
       valid: [
         {
-          code: createCode('-mx-4 mt-2'),
+          code: createCode('-mt-4 mx-2'),
         },
         {
-          code: createCode('mx-4 -mt-1'),
+          code: createCode('mt-4 -ml-1'),
         },
       ],
       invalid: [
         {
-          code: createCode('-mt-1 mx-4'),
+          code: createCode('-mx-1 mt-4'),
           errors: [{ messageId: 'unsorted' }],
-          output: createCode('mx-4 -mt-1'),
+          output: createCode('mt-4 -mx-1'),
         },
       ],
     })
@@ -541,7 +569,7 @@ describe('sort-tailwind-classes', () => {
           code: createCode('bg-[#ff0000] text-white'),
         },
         {
-          code: createCode('w-[100px] h-[200px]'),
+          code: createCode('h-[200px] w-[100px]'),
         },
         {
           code: createCode('bg-[#ff0000] hover:bg-[#00ff00]'),
@@ -726,14 +754,14 @@ describe('sort-tailwind-classes', () => {
     ruleTester.run(`sort-tailwind-classes (edge case: negative values, ${name})`, sortTailwindCssClasses, {
       valid: [
         {
-          code: createCode('-ml-2 -mt-4 flex'),
+          code: createCode('-mt-4 -ml-2 flex'),
         },
       ],
       invalid: [
         {
           code: createCode('flex -mt-4 -ml-2'),
           errors: [{ messageId: 'unsorted' }],
-          output: createCode('-ml-2 -mt-4 flex'),
+          output: createCode('-mt-4 -ml-2 flex'),
         },
       ],
     })
