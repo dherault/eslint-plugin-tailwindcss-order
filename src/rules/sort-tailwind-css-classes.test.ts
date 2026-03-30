@@ -101,7 +101,7 @@ function Component() {
   `
 }
 
-function createCnDirectInvokationDivCode(className: string) {
+function createCnDirectInvocationDivCode(className: string) {
   return `
 import { cn } from 'classnames'
 function Component() {
@@ -114,7 +114,7 @@ function Component() {
   `
 }
 
-function createCnDirectSecondInvokationDivCode(className: string) {
+function createCnDirectSecondInvocationDivCode(className: string) {
   return `
 import { cn } from 'classnames'
 function Component() {
@@ -173,8 +173,8 @@ const createCodes = Object.entries({
   createDoubleCnDivCode,
   createCnNoBracketsDivCode,
   createDoubleCnNoBracketsDivCode,
-  // createCnDirectInvokationDivCode,
-  // createCnDirectSecondInvokationDivCode,
+  createCnDirectInvocationDivCode,
+  createCnDirectSecondInvocationDivCode,
   createStringInterpolationDivCode,
   createMixedAfterStringInterpolationDivCode,
   createMixedBeforeStringInterpolationDivCode,

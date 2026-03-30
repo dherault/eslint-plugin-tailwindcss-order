@@ -273,6 +273,20 @@ const extractClassString = (
     && node.value.expression.type === 'CallExpression'
   ) {
     const callExpr = node.value.expression
+
+    // Extract class strings from direct string args: cn("text-white bg-red-500", "flex items-center")
+    for (const arg of callExpr.arguments ?? []) {
+      if (arg.type === 'Literal' && typeof arg.value === 'string') {
+        const { sourceCode } = context
+        const raw = sourceCode.getText(arg)
+        results.push({
+          classString: arg.value,
+          valueNode: arg,
+          quoteChar: raw[0],
+        })
+      }
+    }
+
     // Look for an object argument
     const objectArg = callExpr.arguments?.find((arg: any) => arg.type === 'ObjectExpression')
     if (objectArg) {
