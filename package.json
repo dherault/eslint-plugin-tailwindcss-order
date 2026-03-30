@@ -36,7 +36,7 @@
     "dev": "tsc --watch",
     "test": "jest",
     "test:watch": "jest --watch",
-    "version": "auto-changelog -p && git add CHANGELOG.md",
+    "version": "npx auto-changelog -p && git add CHANGELOG.md",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
