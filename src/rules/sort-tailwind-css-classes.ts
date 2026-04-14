@@ -360,7 +360,7 @@ export const sortTailwindCssClasses: Rule.RuleModule = {
     docs: {
       description: 'Sort Tailwind CSS classes in a custom order',
       recommended: true,
-      url: 'https://github.com/dherault/eslint-plugin-type-imports',
+      url: 'https://github.com/dherault/eslint-plugin-tailwindcss-order',
     },
     fixable: 'code',
     schema: [
