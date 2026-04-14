@@ -42,13 +42,13 @@
   "devDependencies": {
     "@types/eslint": "^9.6.1",
     "@types/jest": "^30.0.0",
-    "@types/node": "^25.5.0",
+    "@types/node": "^25.6.0",
     "auto-changelog": "^2.5.0",
-    "eslint": "^10.1.0",
+    "eslint": "^10.2.0",
     "jest": "^30.3.0",
-    "ts-jest": "^29.4.6",
+    "ts-jest": "^29.4.9",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   },
   "peerDependencies": {
     "eslint": "^10.0.0"
