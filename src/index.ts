@@ -1,3 +1,4 @@
+import { preventMultipleWhitespaceCharacters } from './rules/prevent-multiple-whitespace-characters'
 import { sortTailwindCssClasses } from './rules/sort-tailwind-css-classes'
 import type {Config} from 'eslint/config'
 
@@ -10,6 +11,7 @@ const plugin = {
   },
   rules: {
     'sort-tailwindcss-classes': sortTailwindCssClasses,
+    'prevent-multiple-whitespace-characters': preventMultipleWhitespaceCharacters,
   },
   configs: {} as Record<ConfigurationName, Config>,
 }
@@ -21,6 +23,7 @@ Object.assign(plugin.configs, {
     },
     rules: {
       'tailwindcss-order/sort-tailwindcss-classes': 'error',
+      'tailwindcss-order/prevent-multiple-whitespace-characters': 'error',
     },
   },
 })

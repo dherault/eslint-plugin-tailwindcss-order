@@ -1,10 +1,10 @@
 # eslint-plugin-tailwindcss-order
 
-An ESLint v10 plugin that automatically sorts Tailwind CSS classes according to a customizable, semantic order. Keep your className attributes clean and consistent across your entire codebase.
+An ESLint v10 plugin that enforces clean, consistent Tailwind CSS class strings. It automatically sorts classes in a semantic order and prevents formatting issues like multiple consecutive spaces.
 
 ## Features
 
-- ✨ **Auto-fixable** - Automatically sorts classes with ESLint's `--fix` option
+- ✨ **Auto-fixable** - Automatically fixes issues with ESLint's `--fix` option
 - 🎯 **Semantic ordering** - Groups classes by purpose (layout, spacing, typography, etc.)
 - ⚙️ **Customizable** - Override the default order with your own preferences
 - 🧩 **Smart modifier handling** - Correctly sorts responsive, state, and dark mode modifiers
@@ -34,27 +34,21 @@ export default [
 ]
 ```
 
-## Usage
+## Rules
 
-The plugin automatically detects and sorts Tailwind CSS classes in JSX `className` attributes:
-
-### Before
-
-```jsx
-<div className="text-white hover:bg-blue-500 p-4 flex bg-blue-600" />
-```
-
-### After
-
-```jsx
-<div className="p-4 flex bg-blue-600 hover:bg-blue-500 text-white" />
-```
-
-## Rule: `sort-tailwindcss-classes`
+### `sort-tailwindcss-classes`
 
 Enforces a consistent, semantic ordering of Tailwind CSS classes.
 
-### Options
+```jsx
+// Bad
+<div className="text-white hover:bg-blue-500 p-4 flex bg-blue-600" />
+
+// Good
+<div className="p-4 flex bg-blue-600 hover:bg-blue-500 text-white" />
+```
+
+#### Options
 
 The rule accepts an optional array of strings to define a custom class order:
 
@@ -92,6 +86,22 @@ export default [
   }
 ]
 ```
+
+### `prevent-multiple-whitespace-characters`
+
+Prevents multiple consecutive whitespace characters inside a `className` string.
+
+```jsx
+// Bad
+<div className="flex  grow" />
+<div className="flex   items-center  gap-4" />
+
+// Good
+<div className="flex grow" />
+<div className="flex items-center gap-4" />
+```
+
+This rule is auto-fixable and collapses any run of whitespace into a single space.
 
 ## License
 
