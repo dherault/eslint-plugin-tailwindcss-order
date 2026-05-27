@@ -39,6 +39,26 @@ describe('prevent-multiple-whitespace-characters', () => {
           errors: [{ messageId: 'multipleWhitespace' }],
           output: createCode('flex items-center grow'),
         },
+        {
+          code: createCode('flex items-center grow '),
+          errors: [{ messageId: 'multipleWhitespace' }],
+          output: createCode('flex items-center grow'),
+        },
+        {
+          code: createCode(' flex items-center grow'),
+          errors: [{ messageId: 'multipleWhitespace' }],
+          output: createCode('flex items-center grow'),
+        },
+        {
+          code: createCode(' flex items-center grow '),
+          errors: [{ messageId: 'multipleWhitespace' }],
+          output: createCode('flex items-center grow'),
+        },
+        {
+          code: createCode('  flex  items-center  grow  '),
+          errors: [{ messageId: 'multipleWhitespace' }],
+          output: createCode('flex items-center grow'),
+        },
       ],
     })
   })

@@ -127,7 +127,7 @@ export const DEFAULT_ORDER = [
   'ring-opacity-',
 
   // Box Shadow
-  'shadow-', 'shadow-none', 'shadow-sm', 'shadow-md', 'shadow-lg', 'shadow-xl', 'shadow-2xl',
+  'shadow', 'shadow-', 'shadow-none', 'shadow-sm', 'shadow-md', 'shadow-lg', 'shadow-xl', 'shadow-2xl',
   'drop-shadow', 'drop-shadow-', 'drop-shadow-sm', 'drop-shadow-md', 'drop-shadow-lg', 'drop-shadow-xl', 'drop-shadow-2xl',
 
   // Filters

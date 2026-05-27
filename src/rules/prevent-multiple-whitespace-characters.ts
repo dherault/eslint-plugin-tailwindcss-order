@@ -25,7 +25,7 @@ export const preventMultipleWhitespaceCharacters: Rule.RuleModule = {
         for (const { classString, valueNode, quoteChar } of classStrings) {
           if (!classString || !valueNode) continue
 
-          if (/\s{2,}/.test(classString)) {
+          if (/\s{2,}|^\s|\s$/.test(classString)) {
             context.report({
               node,
               messageId: 'multipleWhitespace',
